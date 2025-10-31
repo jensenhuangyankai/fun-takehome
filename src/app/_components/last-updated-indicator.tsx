@@ -41,9 +41,9 @@ export function LastUpdatedIndicator({
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="border-border bg-card/50 flex items-center gap-3 rounded-lg border px-3 py-1.5">
-        <div className="flex flex-col gap-0.5">
+    <div className="flex w-full justify-center px-4 md:px-0">
+      <div className="border-border bg-card/50 flex w-full max-w-sm items-center gap-2 rounded-lg border px-3 py-2 md:w-auto md:gap-3 md:py-1.5">
+        <div className="flex flex-1 flex-col gap-0.5">
           <div className="text-muted-foreground text-xs">
             <span className="opacity-70">Last updated:</span>{" "}
             <span className="font-medium tabular-nums">
@@ -59,7 +59,7 @@ export function LastUpdatedIndicator({
           disabled={isRefreshing}
           variant="ghost"
           size="sm"
-          className="h-6 w-6 shrink-0 p-0"
+          className="h-7 w-7 shrink-0 p-0 md:h-6 md:w-6"
         >
           <RefreshCw
             className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`}

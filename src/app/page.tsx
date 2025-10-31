@@ -14,13 +14,13 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="bg-background flex min-h-screen flex-col items-center justify-center">
-        <div className="container flex flex-col items-center gap-12 px-4 py-16">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <h1 className="text-foreground text-4xl font-extrabold tracking-tight sm:text-5xl">
+      <main className="bg-background flex min-h-screen flex-col items-center justify-center px-4 py-8 md:py-16">
+        <div className="container flex flex-col items-center gap-8 md:gap-12">
+          <div className="flex flex-col items-center gap-3 text-center md:gap-4">
+            <h1 className="text-foreground text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               Token Price Explorer
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base md:text-lg">
               Compare token values with real-time pricing
             </p>
           </div>

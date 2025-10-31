@@ -130,7 +130,7 @@ export function TokenSwapCalculator() {
   ]);
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-8">
+    <div className="mx-auto w-full max-w-5xl space-y-6 px-4 md:space-y-8 md:px-0">
       {/* Error State */}
       {error && (
         <div className="flex justify-center">
@@ -151,7 +151,7 @@ export function TokenSwapCalculator() {
 
       {/* USD Input */}
       <div className="flex justify-center">
-        <div className="w-64 space-y-2">
+        <div className="w-full max-w-xs space-y-2 md:w-64">
           <Label
             htmlFor="usd-amount"
             className="text-muted-foreground text-base"
@@ -172,7 +172,7 @@ export function TokenSwapCalculator() {
       </div>
 
       {/* Token Cards */}
-      <div className="flex items-center justify-center gap-12">
+      <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:gap-12">
         {/* Source Token Column */}
         <TokenCard
           id="source-token"
@@ -187,12 +187,12 @@ export function TokenSwapCalculator() {
           formatUsdPrice={formatUsdPrice}
         />
 
-        {/* Arrow */}
-        <div className="flex h-80 w-56 flex-shrink-0 flex-col items-center justify-center">
-          <ArrowRight className="text-muted-foreground h-8 w-8" />
+        {/* Arrow - Horizontal on desktop, Vertical on mobile */}
+        <div className="flex h-auto w-auto flex-shrink-0 flex-row items-center justify-center md:h-80 md:w-56 md:flex-col">
+          <ArrowRight className="text-muted-foreground h-8 w-8 rotate-90 md:rotate-0" />
           {swapRatioText && (
             <div
-              className="text-muted-foreground mt-2 w-full truncate text-center text-xs whitespace-nowrap tabular-nums"
+              className="text-muted-foreground mt-0 w-full truncate text-center text-xs tabular-nums md:mt-2 md:whitespace-nowrap"
               title={swapRatioText}
             >
               {swapRatioText}

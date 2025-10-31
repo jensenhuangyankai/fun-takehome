@@ -57,7 +57,7 @@ export function TokenCard({
   };
 
   return (
-    <div className="flex w-56 flex-col items-center gap-2">
+    <div className="flex w-full max-w-sm flex-col items-center gap-2 md:w-56">
       {/* Dropdown */}
       <div className="w-full space-y-1">
         <Label htmlFor={id} className="text-muted-foreground text-xs">
