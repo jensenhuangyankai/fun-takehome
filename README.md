@@ -34,7 +34,7 @@ Self-hosted on a private home server using:
 
 2. **Get a FunKit API Key**
    
-   Sign up at [fun.xyz](https://fun.xyz) to obtain your API key.
+   Get a api key somehow
 
 ### Installation
 
