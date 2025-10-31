@@ -3,7 +3,7 @@
  */
 
 export const QUERY_CONFIG = {
-  PRICE_REFETCH_INTERVAL_MS: 30000, // 30 seconds
+  PRICE_REFETCH_INTERVAL_MS: 15000, // 15 seconds
 } as const;
 
 export const UI_CONFIG = {

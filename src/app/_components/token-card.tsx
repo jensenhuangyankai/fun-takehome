@@ -60,7 +60,7 @@ export function TokenCard({
     <div className="flex w-56 flex-col items-center gap-2">
       {/* Dropdown */}
       <div className="w-full space-y-1">
-        <Label htmlFor={id} className="text-xs text-slate-400">
+        <Label htmlFor={id} className="text-xs text-muted-foreground">
           {label}
         </Label>
         <Select value={selectValue} onValueChange={handleChange}>
@@ -77,7 +77,7 @@ export function TokenCard({
                 value={`${t.symbol}-${t.chainId}`}
               >
                 <span className="font-semibold">{t.symbol}</span>
-                <span className="text-muted-foreground ml-2 text-sm">
+                <span className="ml-2 text-sm text-muted-foreground">
                   {t.chainName}
                 </span>
               </SelectItem>

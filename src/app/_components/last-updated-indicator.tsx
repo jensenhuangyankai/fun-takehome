@@ -42,16 +42,16 @@ export function LastUpdatedIndicator({
 
   return (
     <div className="flex justify-center">
-      <div className="flex items-center gap-3 rounded-lg border border-slate-800 bg-slate-900/50 px-3 py-1.5">
+      <div className="flex items-center gap-3 rounded-lg border border-border bg-card/50 px-3 py-1.5">
         <div className="flex flex-col gap-0.5">
-          <div className="text-xs text-slate-500">
-            <span className="text-slate-600">Last updated:</span>{" "}
+          <div className="text-xs text-muted-foreground">
+            <span className="opacity-70">Last updated:</span>{" "}
             <span className="font-medium tabular-nums">
               {secondsAgo === 0 ? "just now" : `${secondsAgo}s ago`}
             </span>
           </div>
-          <div className="text-xs text-slate-600">
-            Data refreshes every 30 seconds
+          <div className="text-xs text-muted-foreground opacity-60">
+            Data refreshes every 15 seconds
           </div>
         </div>
         <Button
