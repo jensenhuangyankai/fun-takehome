@@ -2,6 +2,15 @@
 
 A real-time token price comparison tool built as a take-home project for [fun.xyz](https://fun.xyz).
 
+## 🌐 Live Demo
+
+**[https://takehome.jensenhshoots.com](https://takehome.jensenhshoots.com)**
+
+Self-hosted on a private home server using:
+- **[Nixpacks](https://nixpacks.com/)** - Docker container builder
+- **[Dokploy](https://dokploy.com/)** - Self-hosted deployment platform
+- **Ubuntu VM** - Production environment
+
 ## 🚀 Tech Stack
 
 - **[Next.js](https://nextjs.org/)** - React framework with App Router
