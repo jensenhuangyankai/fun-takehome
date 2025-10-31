@@ -2,7 +2,7 @@
 
 A real-time token price comparison tool built as a take-home project for [fun.xyz](https://fun.xyz).
 
-## 🌐 Live Demo
+## Live Demo
 
 **[https://takehome.jensenhshoots.com](https://takehome.jensenhshoots.com)**
 
@@ -11,7 +11,7 @@ Self-hosted on a private home server using:
 - **[Dokploy](https://dokploy.com/)** - Self-hosted deployment platform
 - **Ubuntu VM** - Production environment
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **[Next.js](https://nextjs.org/)** - React framework with App Router
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
@@ -21,7 +21,7 @@ Self-hosted on a private home server using:
 - **[TanStack Query](https://tanstack.com/query)** - Data fetching & caching
 - **[FunKit API](https://docs.fun.xyz/)** - Token metadata & pricing data
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ Self-hosted on a private home server using:
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🏗️ Design Decisions
+## Design Decisions
 
 ### Token Price Fetching Strategy
 
@@ -74,7 +74,7 @@ Self-hosted on a private home server using:
 Given the small number of supported tokens (4), a batch approach provides the best UX with minimal overhead.
 
 **Scalability Considerations:**
-If the app were to support 100+ tokens, the recommended approach would be:
+If the app were to support 100+ tokens, I would have implemented:
 1. Individual token fetches on selection
 2. React Query caching with 15s stale time
 3. Prefetch top 10 popular tokens on page load

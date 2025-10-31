@@ -1,5 +1,6 @@
 import { TokenSwapCalculator } from "~/app/_components/token-swap-calculator";
 import { api, HydrateClient } from "~/trpc/server";
+import { SUPPORTED_TOKENS } from "~/lib/tokens";
 
 // Force dynamic rendering to avoid build-time API calls
 export const dynamic = "force-dynamic";
@@ -8,9 +9,12 @@ export default async function Home() {
   // Prefetch supported tokens on the server for instant hydration
   void api.token.getSupportedTokens.prefetch();
 
-  // Prefetch default token data (USDC on Ethereum + USDT on Polygon)
-  void api.token.getTokenData.prefetch({ chainId: "1", symbol: "USDC" });
-  void api.token.getTokenData.prefetch({ chainId: "137", symbol: "USDT" });
+  // Prefetch ALL token data at once
+  const tokenQueryInput = SUPPORTED_TOKENS.map((token) => ({
+    chainId: token.chainId,
+    symbol: token.symbol,
+  }));
+  void api.token.getMultipleTokenData.prefetch(tokenQueryInput);
 
   return (
     <HydrateClient>

@@ -29,17 +29,12 @@ export function TokenSwapCalculator() {
     }
   }, [supportedTokens]);
 
-  // Memoize query input to prevent unnecessary refetches
-  const tokenQueryInput = useMemo(
-    () =>
-      supportedTokens.map((token) => ({
-        chainId: token.chainId,
-        symbol: token.symbol,
-      })),
-    [supportedTokens],
-  );
+  const tokenQueryInput = supportedTokens.map((token) => ({
+    chainId: token.chainId,
+    symbol: token.symbol,
+  }));
 
-  // Fetch ALL token prices at once (batch query with caching)
+  // Fetch ALL token prices at once (using prefetched data from server)
   const {
     data: allTokensData,
     isLoading,
@@ -77,29 +72,21 @@ export function TokenSwapCalculator() {
     [allTokensData, targetToken],
   );
 
-  // Memoize formatting functions
-  const formatTokenAmount = useMemo(
-    () =>
-      (value: number, decimals = 8) => {
-        if (value === 0) return "0.00";
-        if (value < FORMAT_CONFIG.MIN_SCIENTIFIC_NOTATION_THRESHOLD)
-          return value.toExponential(4);
-        return value.toFixed(Math.min(decimals, 8));
-      },
-    [],
-  );
 
-  const formatUsdPrice = useMemo(
-    () => (price: number) => {
-      return new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: FORMAT_CONFIG.USD_CURRENCY,
-        minimumFractionDigits: FORMAT_CONFIG.USD_MIN_DECIMALS,
-        maximumFractionDigits: FORMAT_CONFIG.USD_MAX_DECIMALS,
-      }).format(price);
-    },
-    [],
-  );
+  const formatTokenAmount = (value: number, decimals = 8) => {
+    if (value === 0) return "0.00";
+    if (value < FORMAT_CONFIG.MIN_SCIENTIFIC_NOTATION_THRESHOLD)
+      return value.toExponential(4);
+    return value.toFixed(Math.min(decimals, 8));
+  };
+  const formatUsdPrice = (price: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: FORMAT_CONFIG.USD_CURRENCY,
+      minimumFractionDigits: FORMAT_CONFIG.USD_MIN_DECIMALS,
+      maximumFractionDigits: FORMAT_CONFIG.USD_MAX_DECIMALS,
+    }).format(price);
+  };
 
   // Calculate token amounts based on USD input and prices
   const sourceTokenAmount =
