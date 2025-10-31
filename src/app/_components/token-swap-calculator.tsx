@@ -152,7 +152,10 @@ export function TokenSwapCalculator() {
       {/* USD Input */}
       <div className="flex justify-center">
         <div className="w-64 space-y-2">
-          <Label htmlFor="usd-amount" className="text-base text-muted-foreground">
+          <Label
+            htmlFor="usd-amount"
+            className="text-muted-foreground text-base"
+          >
             USD Amount
           </Label>
           <Input
