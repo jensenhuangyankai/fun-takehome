@@ -80,7 +80,7 @@ export function TokenSwapCalculator() {
   // Memoize formatting functions
   const formatTokenAmount = useMemo(
     () =>
-      (value: number, decimals: number = 8) => {
+      (value: number, decimals = 8) => {
         if (value === 0) return "0.00";
         if (value < FORMAT_CONFIG.MIN_SCIENTIFIC_NOTATION_THRESHOLD)
           return value.toExponential(4);

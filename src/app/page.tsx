@@ -1,6 +1,9 @@
 import { TokenSwapCalculator } from "~/app/_components/token-swap-calculator";
 import { api, HydrateClient } from "~/trpc/server";
 
+// Force dynamic rendering to avoid build-time API calls
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   // Prefetch supported tokens on the server for instant hydration
   void api.token.getSupportedTokens.prefetch();
