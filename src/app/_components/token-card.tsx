@@ -42,7 +42,7 @@ export function TokenCard({
   formatTokenAmount,
   formatUsdPrice,
 }: TokenCardProps) {
-  const selectValue = () => (token ? `${token.symbol}-${token.chainId}` : "");
+  const selectValue = (token ? `${token.symbol}-${token.chainId}` : "");
 
   const handleChange = (tokenKey: string) => {
     const [symbol, chainId] = tokenKey.split("-");
